@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Pesquise um Pokémon pelo nome e descubra sua imagem e seus tipos."
+    />
+    <title>Pokédex — Encontre seu Pokémon</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="pokedex">
+      <div class="brand" aria-label="Pokédex">
+        <span class="brand__light" aria-hidden="true"></span>
+        <span>POKÉDEX</span>
+      </div>
+
+      <section class="content" aria-labelledby="page-title">
+        <p class="eyebrow">SUA AVENTURA COMEÇA AQUI</p>
+        <h1 id="page-title">Quem vamos<br />encontrar?</h1>
+        <p class="intro">Digite o nome de um Pokémon para descobrir mais sobre ele.</p>
+
+        <form class="search" id="search-form">
+          <label class="visually-hidden" for="pokemon-name">Nome do Pokémon</label>
+          <input
+            id="pokemon-name"
+            name="pokemon"
+            type="search"
+            placeholder="Ex.: pikachu"
+            autocomplete="off"
+            required
+          />
+          <button id="search-button" type="submit">
+            <span>Pesquisar</span>
+            <span class="button__arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <p class="message" id="message" role="status" aria-live="polite">
+          Experimente buscar por Pikachu, Eevee ou Charmander.
+        </p>
+
+        <section class="pokemon-card" id="pokemon-card" aria-live="polite" hidden>
+          <div class="pokemon-card__image-wrap">
+            <img id="pokemon-image" alt="" />
+          </div>
+          <div class="pokemon-card__details">
+            <p class="pokemon-card__number" id="pokemon-number"></p>
+            <h2 class="pokemon-card__name" id="pokemon-result-name"></h2>
+            <div class="pokemon-card__types" id="pokemon-types"></div>
+          </div>
+        </section>
+      </section>
+
+      <div class="decoration decoration--one" aria-hidden="true"></div>
+      <div class="decoration decoration--two" aria-hidden="true"></div>
+      <p class="credit">Dados fornecidos pela PokéAPI</p>
+    </main>
+  </body>
+</html>
